@@ -6,3 +6,7 @@
 :root {
   @apply font-serif;
 }
+
+.box-shadow-inset {
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.9) inset;
+}
