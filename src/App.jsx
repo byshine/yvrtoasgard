@@ -19,11 +19,18 @@ function App() {
     );
   }
 
+  function isTop() {
+    return window.scrollY === 0;
+  }
+
   const debouncedWheel = debounce((e) => {
-    if (e.deltaY <= 0) {
+    if (e.deltaY < 0 && isTop()) {
       dispatch(decrement());
-    } else if (e.deltaY > 0 && isBottom()) {
+      return;
+    }
+    if (isBottom()) {
       dispatch(increment());
+      return;
     }
   }, 100);
 
