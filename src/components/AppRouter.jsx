@@ -15,7 +15,7 @@ function AppRouter() {
         history.push("/");
         break;
       case 2:
-        console.log("Push team");
+        history.push("/team");
         break;
       default:
         history.push("/");
