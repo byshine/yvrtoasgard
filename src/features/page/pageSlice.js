@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: 1,
+  total: 2,
 };
 
 export const pageSlice = createSlice({
@@ -9,10 +10,14 @@ export const pageSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      state.value += 1;
+      if (state.value < state.total) {
+        state.value += 1;
+      }
     },
     decrement: (state) => {
-      state.value -= 1;
+      if (state.value > 1) {
+        state.value -= 1;
+      }
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload;
