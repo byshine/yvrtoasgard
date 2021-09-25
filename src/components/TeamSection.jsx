@@ -18,7 +18,7 @@ function Member(props) {
 
 function TeamSection() {
   return (
-    <div className="bg-black p-44">
+    <div className="bg-gray-800 p-44">
       <div>
         <h2 className="text-yellow-400 uppercase text-center font-bold tracking-widest text-4xl">
           The Team
