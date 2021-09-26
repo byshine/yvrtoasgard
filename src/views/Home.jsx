@@ -85,14 +85,14 @@ function Main() {
           </motion.div>
         </div>
         <motion.div
-          className="absolute -z-0 left-1/4"
-          initial={{ left: 0, opacity: 0 }}
-          animate={{ left: "25%", opacity: 1 }}
+          className="absolute -z-0 left-[25%] sm:left-1/4"
+          initial={{ translateX: "-100%", opacity: 0 }}
+          animate={{ translateX: "0%", opacity: 1 }}
           transition={{ duration: 1.5 }}
         >
           <motion.img
             src={vintage}
-            className="max-w-lg  transform -rotate-12 opacity-60 rounded-md"
+            className="max-w-[85%] sm:max-w-sm  transform -rotate-12 opacity-60 rounded-md"
           />
         </motion.div>
       </div>

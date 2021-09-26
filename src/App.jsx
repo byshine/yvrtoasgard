@@ -6,7 +6,7 @@ import debounce from "lodash/debounce";
 import { increment, decrement } from "./features/page/pageSlice";
 import AppRouter from "./components/AppRouter";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import "hammerjs";
 function App() {
   const dispatch = useDispatch();
   let app = useRef();
@@ -38,6 +38,26 @@ function App() {
     debouncedWheel(e);
   };
 
+  useEffect(() => {
+    let mc = new Hammer.Manager(app.current);
+    const Swipe = new Hammer.Swipe();
+    mc.add(Swipe);
+    mc.on("swipedown", (e) => {
+      if (isTop()) {
+        dispatch(decrement());
+      }
+    });
+    mc.on("swipeup", (e) => {
+      if (isBottom()) {
+        dispatch(increment());
+      }
+    });
+
+    return () => {
+      mc = null;
+    };
+  }, []);
+
   return (
     <div ref={app} onWheel={handleWheel} className="bg-[#2b2b2b]">
       <div className="absolute top-0 right-0 left-0 z-30 h-[50px]">
@@ -50,7 +70,6 @@ function App() {
           <SidebarTrack />
         </div>
       </div>
-
       <Router>
         <AppRouter />
       </Router>
