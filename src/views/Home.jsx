@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import vintage from "../assets/vintage-2.jpeg";
+import vintage from "../assets/vintage-opt.jpg";
 import ChevronDoubleDown from "../components/icons/ChevronDoubleDown";
 
 function MainFooter() {
