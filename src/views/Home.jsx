@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import vintage from "../assets/vintage-opt.jpg";
+import vtna from "../assets/vtna.jpeg";
 import ChevronDoubleDown from "../components/icons/ChevronDoubleDown";
 
 function MainFooter() {
@@ -85,7 +86,7 @@ function Main() {
           </motion.div>
         </div>
         <motion.div
-          className="absolute -z-0 left-[25%] sm:left-1/4"
+          className="absolute -z-0 left-[25%] sm:left-1/4 flex flex-col lg:flex-row"
           initial={{ translateX: "-100%", opacity: 0 }}
           animate={{ translateX: "0%", opacity: 1 }}
           transition={{ duration: 1.5 }}
@@ -93,6 +94,10 @@ function Main() {
           <motion.img
             src={vintage}
             className="max-w-[85%] sm:max-w-sm  transform -rotate-12 opacity-60 rounded-md"
+          />
+          <motion.img
+            src={vtna}
+            className="max-w-[85%] sm:max-w-sm  transform rotate-12 opacity-60 rounded-md"
           />
         </motion.div>
       </div>
