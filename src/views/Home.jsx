@@ -88,7 +88,7 @@ function Main() {
         <motion.div
           className="absolute -z-0 left-[25%] sm:left-1/4 flex flex-col lg:flex-row"
           initial={{ translateX: "-100%", opacity: 0 }}
-          animate={{ translateX: "0%", opacity: 1 }}
+          animate={{ translateX: "0%", opacity: 1, staggerChildren: 0.1 }}
           transition={{ duration: 1.5 }}
         >
           <motion.img

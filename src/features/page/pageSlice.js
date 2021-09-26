@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: 1,
-  total: 2,
+  total: 3,
 };
 
 export const pageSlice = createSlice({

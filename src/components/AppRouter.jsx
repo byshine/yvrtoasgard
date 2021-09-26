@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Home from "../views/Home";
 import { Switch, Route } from "react-router-dom";
 import Team from "../views/Team";
+import Album from "../views/Album";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -15,6 +16,9 @@ function AppRouter() {
         history.push("/");
         break;
       case 2:
+        history.push("/album");
+        break;
+      case 3:
         history.push("/team");
         break;
       default:
@@ -26,6 +30,9 @@ function AppRouter() {
       <Switch>
         <Route path="/team" exact>
           <Team />
+        </Route>
+        <Route path="/album" exact>
+          <Album />
         </Route>
         <Route path="/" exact>
           <Home />

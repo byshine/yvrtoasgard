@@ -39,7 +39,10 @@ function App() {
   };
 
   useEffect(() => {
-    let mc = new Hammer.Manager(app.current);
+    delete Hammer.defaults.cssProps.userSelect;
+    let mc = new Hammer.Manager(app.current, {
+      userSelect: true,
+    });
     const Swipe = new Hammer.Swipe();
     mc.add(Swipe);
     mc.on("swipedown", (e) => {
@@ -62,7 +65,7 @@ function App() {
     <div ref={app} onWheel={handleWheel} className="bg-[#2b2b2b]">
       <div className="absolute top-0 right-0 left-0 z-30 h-[50px]">
         <div className="flex justify-end p-5 text-white text-2xl opacity-60">
-          <RiInstagramLine></RiInstagramLine>
+          <RiInstagramLine className="cursor-pointer"></RiInstagramLine>
         </div>
       </div>
       <div className="right-0 bottom-0 top-0 z-40 absolute flex items-center pr-3">
