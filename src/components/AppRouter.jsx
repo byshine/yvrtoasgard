@@ -3,13 +3,14 @@ import Home from "../views/Home";
 import { Switch, Route } from "react-router-dom";
 import Team from "../views/Team";
 import Album from "../views/Album";
-import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setPage } from "../features/page/pageSlice";
 
 function AppRouter() {
   const page = useSelector((state) => state.page.value);
-
   const history = useHistory();
+
   useEffect(() => {
     switch (page) {
       case 1:
@@ -25,6 +26,27 @@ function AppRouter() {
         history.push("/");
     }
   }, [page]);
+
+  const location = useLocation();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const pathName = location.pathname;
+    switch (pathName) {
+      case "/":
+        dispatch(setPage(1));
+        break;
+      case "/album":
+        dispatch(setPage(2));
+        break;
+      case "/team":
+        dispatch(setPage(3));
+        break;
+      default:
+        dispatch(setPage(1));
+        break;
+    }
+  }, []);
+
   return (
     <>
       <Switch>

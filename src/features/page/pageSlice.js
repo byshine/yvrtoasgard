@@ -22,10 +22,14 @@ export const pageSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload;
     },
+    setPage: (state, action) => {
+      state.value = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = pageSlice.actions;
+export const { increment, decrement, incrementByAmount, setPage } =
+  pageSlice.actions;
 
 export default pageSlice.reducer;
