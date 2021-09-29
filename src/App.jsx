@@ -62,7 +62,7 @@ function App() {
   }, []);
 
   return (
-    <div ref={app} onWheel={handleWheel} className="bg-[#2b2b2b]">
+    <div ref={app} onWheel={handleWheel} className="bg-[#2b2b2b] h-screen">
       <div className="absolute top-0 right-0 left-0 z-30 h-[50px]">
         <div className="flex justify-end p-5 text-white text-2xl opacity-60">
           <RiInstagramLine className="cursor-pointer"></RiInstagramLine>
